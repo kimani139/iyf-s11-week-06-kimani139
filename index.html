@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Directory</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>User Directory</h1>
+
+        <div class="controls">
+            <input type="text" id="search" placeholder="Search by name or email...">
+            <select id="sort-select">
+                <option value="none">Sort...</option>
+                <option value="az">Name (A–Z)</option>
+                <option value="za">Name (Z–A)</option>
+            </select>
+            <select id="city-filter">
+                <option value="all">All Cities</option>
+            </select>
+        </div>
+
+        <div id="loading">Loading...</div>
+        <div id="error" class="hidden"></div>
+        <div id="users-container"></div>
+
+        <div id="new-post-section">
+            <h2>Create a New Post</h2>
+            <form id="post-form">
+                <input type="text" id="post-title" placeholder="Post title" required>
+                <textarea id="post-body" placeholder="Post content" required></textarea>
+                <label>
+                    User ID:
+                    <input type="number" id="post-user-id" value="1" min="1" max="10" required>
+                </label>
+                <button type="submit">Create Post</button>
+            </form>
+            <div id="post-result" class="hidden"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
